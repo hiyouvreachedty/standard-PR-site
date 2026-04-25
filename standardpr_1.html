@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StandardPR — Get Your Business in the Press</title>
+  <meta name="description" content="StandardPR helps niche businesses get featured in the publications that actually move their customers. PR that fits your industry, not just your budget." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+      --text-sm: clamp(0.85rem, 0.78rem + 0.35vw, 0.975rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+      --text-lg: clamp(1.1rem, 0.98rem + 0.75vw, 1.45rem);
+      --text-xl: clamp(1.5rem, 1.1rem + 1.5vw, 2.4rem);
+      --text-2xl: clamp(2.2rem, 1.2rem + 3vw, 4.2rem);
+      --text-3xl: clamp(3rem, 1.4rem + 5vw, 6.5rem);
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      --color-bg: #f4f4f4;
+      --color-surface: #ffffff;
+      --color-surface-2: #ececec;
+      --color-surface-3: #e0e0e0;
+      --color-text: #111111;
+      --color-text-muted: #555555;
+      --color-text-faint: #999999;
+      --color-border: rgba(0, 0, 0, 0.1);
+      --color-divider: rgba(0, 0, 0, 0.06);
+      --color-primary: #111111;
+      --color-primary-hover: #000000;
+      --color-primary-soft: rgba(0, 0, 0, 0.06);
+      --color-accent: #111111;
+      --color-accent-soft: rgba(0, 0, 0, 0.06);
+      --color-success: #2d6a1f;
+      --color-inverse: #ffffff;
+
+      --font-body: 'Jost', system-ui, sans-serif;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+
+      --radius-sm: 0.4rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1.1rem;
+      --radius-xl: 1.6rem;
+      --radius-full: 999px;
+
+      --shadow-sm: 0 2px 10px rgba(14, 11, 8, 0.06);
+      --shadow-md: 0 8px 28px rgba(14, 11, 8, 0.09);
+      --shadow-lg: 0 20px 44px rgba(14, 11, 8, 0.13);
+
+      --content: 1140px;
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #0a0a0a;
+      --color-surface: #141414;
+      --color-surface-2: #1c1c1c;
+      --color-surface-3: #252525;
+      --color-text: #f0f0f0;
+      --color-text-muted: #aaaaaa;
+      --color-text-faint: #666666;
+      --color-border: rgba(255, 255, 255, 0.1);
+      --color-divider: rgba(255, 255, 255, 0.06);
+      --color-primary: #f0f0f0;
+      --color-primary-hover: #ffffff;
+      --color-primary-soft: rgba(255, 255, 255, 0.07);
+      --color-accent: #f0f0f0;
+      --color-accent-soft: rgba(255, 255, 255, 0.07);
+      --shadow-sm: 0 2px 10px rgba(0,0,0,0.35);
+      --shadow-md: 0 8px 28px rgba(0,0,0,0.45);
+      --shadow-lg: 0 20px 44px rgba(0,0,0,0.55);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; color: inherit; }
+    button { border: 0; background: none; cursor: pointer; }
+    ul { list-style: none; }
+
+    :focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+
+    .skip-link {
+      position: absolute; left: 1rem; top: -3rem;
+      background: #111111; color: white;
+      padding: 0.75rem 1rem; border-radius: var(--radius-full); z-index: 200;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--content));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding-block: clamp(var(--space-12), 9vw, var(--space-24));
+    }
+
+    /* ── EYEBROW ── */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      min-height: 2.1rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      background: transparent;
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    /* ── NAV ── */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 1px solid var(--color-divider);
+      background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+      backdrop-filter: blur(16px);
+    }
+    .nav {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: var(--space-4);
+      min-height: 4.5rem;
+    }
+    .brand {
+      display: inline-flex; align-items: center;
+      gap: 0.75rem; font-family: var(--font-display);
+      font-size: 1.15rem; letter-spacing: 0.01em;
+    }
+    .brand-mark {
+      width: 2.1rem; height: 2.1rem;
+      border-radius: 0.5rem;
+      display: grid; place-items: center;
+      background: #111111;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex; align-items: center;
+      gap: var(--space-5);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .nav-links a:hover { color: var(--color-text); }
+    .nav-actions { display: flex; align-items: center; gap: var(--space-3); }
+    .theme-toggle {
+      width: 2.5rem; height: 2.5rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      display: inline-grid; place-items: center;
+      background: var(--color-surface);
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 2.85rem; padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-sm);
+      font-size: var(--text-xs); font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: #111111; color: #ffffff; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+    .btn-primary:hover { background: #000000; box-shadow: 0 6px 22px rgba(0,0,0,0.28); }
+    .btn-accent { background: #111111; color: #ffffff; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
+    .btn-accent:hover { background: #000000; }
+    .btn-secondary {
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+    }
+
+    /* ── HERO ── */
+    .hero-section {
+      padding-block: clamp(var(--space-16), 12vw, 7rem) clamp(var(--space-8), 5vw, var(--space-12));
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 75% 50%, rgba(0,0,0,0.03), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+      gap: clamp(var(--space-8), 5vw, var(--space-16));
+      align-items: center;
+    }
+    .hero-copy h1 {
+      margin-top: var(--space-5);
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: 300;
+      line-height: 0.96;
+      letter-spacing: -0.01em;
+      max-width: 13ch;
+    }
+    .hero-copy h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: #555555;
+    }
+    .hero-copy p {
+      margin-top: var(--space-5);
+      max-width: 52ch;
+      color: var(--color-text-muted);
+      font-size: var(--text-lg);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: var(--space-3);
+      margin-top: var(--space-6);
+      color: var(--color-text-faint); font-size: var(--text-xs);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 0.35rem; }
+    .hero-actions {
+      display: flex; flex-wrap: wrap; gap: var(--space-3);
+      margin-top: var(--space-8);
+    }
+
+    /* Hero image panel */
+    .hero-panel {
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-2);
+      box-shadow: var(--shadow-lg);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/5;
+    }
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%);
+    }
+    .hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+    }
+    .hero-img-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.5rem;
+      color: #fff;
+    }
+    .hero-img-caption-label {
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      opacity: 0.7; margin-bottom: 0.4rem;
+    }
+    .hero-img-caption-text {
+      font-family: var(--font-display);
+      font-size: 1.1rem; font-weight: 300; font-style: italic;
+      line-height: 1.3;
+    }
+
+    /* ── STATS ── */
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: var(--space-4);
+      margin-top: calc(-1 * var(--space-8));
+      position: relative; z-index: 5;
+    }
+    .stat-card {
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+    }
+    .stat-card strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+      color: var(--color-text);
+    }
+    .stat-card span { color: var(--color-text-muted); font-size: var(--text-sm); }
+
+    /* ── SECTION HEAD ── */
+    .section-head { display: grid; gap: var(--space-4); margin-bottom: var(--space-8); max-width: 48rem; }
+    .section-head h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+    }
+    .section-head p { color: var(--color-text-muted); }
+
+    /* ── FEATURES ── */
+    .feature-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: var(--space-4);
+    }
+    .card {
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+    }
+    .card-icon {
+      width: 2.5rem; height: 2.5rem;
+      border-radius: var(--radius-md);
+      background: var(--color-surface-2);
+      color: var(--color-text);
+      display: grid; place-items: center;
+      margin-bottom: var(--space-4);
+      border: 1px solid var(--color-border);
+    }
+    [data-theme="dark"] .card-icon {
+      background: var(--color-surface-2);
+      color: var(--color-text);
+    }
+    .card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem; line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+    .card p, .card li, .testimonial p, .faq-answer, .price-card p {
+      color: var(--color-text-muted);
+    }
+
+    /* ── NICHES ── */
+    .niche-section { background: #111111; color: #f0f0f0; }
+    .niche-section .section-head h2 { color: #f0f0f0; }
+    .niche-section .section-head p { color: rgba(240,240,240,0.6); }
+    .niche-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: var(--space-4);
+    }
+    .niche-card {
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: background var(--transition);
+    }
+    .niche-card:hover { background: rgba(255,255,255,0.09); }
+    .niche-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem; font-weight: 400;
+      margin-bottom: 0.4rem;
+      color: #f0f0f0;
+    }
+    .niche-card p { color: rgba(240,240,240,0.55); font-size: var(--text-sm); }
+    .niche-badge {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(240,240,240,0.5);
+      padding: 0.2rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* ── OFFER ── */
+    .offer-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--space-8); align-items: start;
+    }
+    .offer-list { display: grid; gap: 0.85rem; margin-top: 1rem; }
+    .offer-list li {
+      display: flex; gap: 0.75rem; align-items: flex-start;
+      padding: 0.9rem 1rem;
+      border-radius: var(--radius-md);
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+    }
+    .check {
+      margin-top: 0.1rem;
+      width: 1.3rem; height: 1.3rem;
+      border-radius: 50%;
+      background: var(--color-surface-2);
+      color: var(--color-text);
+      display: inline-grid; place-items: center;
+      font-weight: 600; font-size: 0.72rem;
+      flex-shrink: 0;
+      border: 1px solid var(--color-border);
+    }
+
+    /* ── PRICING ── */
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: var(--space-4); align-items: stretch;
+    }
+    .price-card {
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      position: relative; display: flex; flex-direction: column;
+    }
+    .price-card.featured {
+      outline: 2px solid #111111;
+      transform: translateY(-0.3rem);
+      box-shadow: var(--shadow-lg);
+    }
+    .price-label {
+      width: fit-content; margin-bottom: 1rem;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-2);
+      color: var(--color-text-muted);
+      padding: 0.3rem 0.75rem;
+      font-size: var(--text-xs); font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .price-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem; font-weight: 300; margin-bottom: 0.25rem;
+    }
+    .price-row { display: flex; align-items: flex-end; gap: 0.4rem; margin-block: 0.6rem 1rem; }
+    .price {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 0.9; font-weight: 300;
+      font-family: var(--font-display);
+      letter-spacing: -0.01em;
+    }
+    .price-note { color: var(--color-text-muted); font-size: var(--text-sm); padding-bottom: 0.2rem; }
+    .price-list { display: grid; gap: 0.75rem; margin: 1rem 0 1.5rem; flex: 1; }
+    .price-list li { display: flex; gap: 0.7rem; align-items: flex-start; font-size: var(--text-sm); }
+
+    /* ── PUBLICATIONS ── */
+    .pub-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: var(--space-4);
+    }
+    .pub-card {
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+    }
+    .pub-name {
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .pub-type {
+      font-size: var(--text-xs); font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--color-text-faint); margin-bottom: 0.65rem;
+    }
+    .pub-desc { color: var(--color-text-muted); font-size: var(--text-sm); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonial-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: var(--space-4);
+    }
+    .testimonial {
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      display: grid; gap: 1rem;
+    }
+    .quote-mark {
+      color: var(--color-text-faint);
+      font-size: 2.5rem; line-height: 0.7;
+      font-family: var(--font-display);
+    }
+    .testimonial-footer {
+      display: flex; align-items: center;
+      gap: 0.875rem; color: var(--color-text-muted); font-size: var(--text-sm);
+    }
+    .avatar {
+      width: 2.6rem; height: 2.6rem; border-radius: 50%;
+      display: grid; place-items: center;
+      background: #111111;
+      color: #ffffff;
+      font-weight: 600; font-size: 0.72rem; flex-shrink: 0;
+    }
+
+    /* ── FAQ ── */
+    .faq { display: grid; gap: 0.875rem; }
+    .faq-item {
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      border-radius: var(--radius-lg); overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; display: flex; align-items: center;
+      justify-content: space-between; gap: 1rem;
+      padding: 1.1rem 1.25rem;
+      text-align: left; font-weight: 600;
+      font-size: var(--text-sm);
+    }
+    .faq-answer { padding: 0 1.25rem 1.25rem; display: none; color: var(--color-text-muted); font-size: var(--text-sm); }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform var(--transition); color: var(--color-text-muted); font-size: 1.4rem; line-height: 1; }
+
+    /* ── CTA PANEL ── */
+    .cta-panel {
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-lg);
+      border-radius: var(--radius-xl);
+      padding: clamp(var(--space-8), 6vw, var(--space-16));
+      text-align: center;
+      background: var(--color-surface);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-panel::before {
+      content: '';
+      position: absolute;
+      bottom: -2rem; right: -2rem;
+      width: 14rem; height: 14rem;
+      border-radius: 50%;
+      background: var(--color-surface-2);
+      pointer-events: none;
+    }
+    .cta-panel h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: var(--text-2xl);
+      line-height: 1.0;
+      max-width: 14ch;
+      margin: 1rem auto 0;
+    }
+    .cta-panel p {
+      color: var(--color-text-muted);
+      max-width: 44rem; margin: 1rem auto 0;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding-block: var(--space-12) var(--space-8);
+      border-top: 1px solid var(--color-divider);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.3fr 0.7fr;
+      gap: var(--space-8); align-items: start;
+    }
+    .footer-links {
+      display: flex; flex-wrap: wrap; gap: 1rem 1.5rem;
+      color: var(--color-text-muted); font-size: var(--text-sm);
+      justify-content: flex-end;
+    }
+    .footer-links a:hover { color: var(--color-text); }
+
+    /* ── MENU TOGGLE ── */
+    .menu-toggle {
+      display: none; width: 2.5rem; height: 2.5rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+    }
+
+    /* ── DIVIDER LINE ── */
+    .rule { border: none; border-top: 1px solid var(--color-divider); margin: 0; }
+
+    @media (max-width: 980px) {
+      .nav { flex-wrap: wrap; padding-block: 0.75rem; }
+      .menu-toggle { display: inline-grid; place-items: center; }
+      .nav-links {
+        display: none; width: 100%; flex-direction: column;
+        align-items: flex-start; gap: 0.875rem; padding-bottom: 0.5rem;
+      }
+      .nav-links.open { display: flex; }
+      .hero-grid, .offer-layout, .feature-grid, .pricing-grid,
+      .testimonial-grid, .stats-grid, .footer-grid, .niche-grid, .pub-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-actions { margin-left: auto; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(calc(100% - 1.25rem), var(--content)); }
+      .section { padding-block: var(--space-16); }
+      .hero-actions, .nav-actions { width: 100%; }
+      .hero-actions .btn, .nav-actions .btn { flex: 1; }
+      .theme-toggle { flex-shrink: 0; }
+      .price-card.featured { transform: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="StandardPR home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="7" height="7" rx="1.5" fill="currentColor"/>
+            <rect x="14" y="3" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.5"/>
+            <rect x="3" y="14" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.5"/>
+            <rect x="14" y="14" width="7" height="7" rx="1.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <span>StandardPR</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" data-menu-toggle>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+
+      <nav class="nav-links" aria-label="Primary" data-nav-links>
+        <a href="#niches">Who We Serve</a>
+        <a href="#publications">Publications</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Results</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+        </button>
+        <a class="btn btn-primary" href="#pricing">Get Featured</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero-section section" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Niche PR for growing businesses</span>
+          <h1>Your story, in the <em>right</em> publications.</h1>
+          <p>
+            StandardPR gets niche businesses featured in the trade journals, industry blogs, and vertical media that their actual customers read every day — not just the outlets that sound impressive at dinner.
+          </p>
+          <div class="hero-meta">
+            <span>✦ Targeted placements</span>
+            <span>✦ No fluff metrics</span>
+            <span>✦ Real editorial coverage</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#pricing">See our packages</a>
+            <a class="btn btn-secondary" href="#niches">Find your niche</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="StandardPR editorial coverage">
+          <img
+            class="hero-img"
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80&auto=format&fit=crop"
+            alt="Professional business meeting — editorial PR coverage"
+          />
+          <div class="hero-img-overlay"></div>
+          <div class="hero-img-caption">
+            <div class="hero-img-caption-label">Featured client — Growth tier</div>
+            <div class="hero-img-caption-text">"The placement changed how buyers perceived us overnight."</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="container stats-grid" aria-label="Quick highlights">
+      <article class="stat-card">
+        <strong>200+</strong>
+        <span>Niche and vertical publications in our active media network across industries.</span>
+      </article>
+      <article class="stat-card">
+        <strong>3–6 wks</strong>
+        <span>Average time from kickoff to first live placement for most clients.</span>
+      </article>
+      <article class="stat-card">
+        <strong>94%</strong>
+        <span>Client placement rate — most businesses in our program get covered.</span>
+      </article>
+    </section>
+
+    <!-- WHO WE SERVE -->
+    <section class="section niche-section" id="niches">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" style="color:rgba(240,240,240,0.6);border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);">Industries we know</span>
+          <h2>PR built for the businesses big agencies ignore.</h2>
+          <p>
+            The trades, blogs, and newsletters your customers actually subscribe to — we have the relationships, the pitch templates, and the track record in each of these categories.
+          </p>
+        </div>
+
+        <div class="niche-grid">
+          <div class="niche-card">
+            <div class="niche-badge">Food &amp; Bev</div>
+            <h3>Craft Beverage</h3>
+            <p>Breweries, cideries, distilleries, and kombucha brands. Regional coverage that drives taproom traffic and distributor interest.</p>
+          </div>
+          <div class="niche-card">
+            <div class="niche-badge">Pet Industry</div>
+            <h3>Pet Services &amp; Retail</h3>
+            <p>Groomers, trainers, boutiques, and pet wellness brands. Publications read by the pet-obsessed consumer and the trade buyer alike.</p>
+          </div>
+          <div class="niche-card">
+            <div class="niche-badge">Body Art</div>
+            <h3>Tattoo &amp; Piercing Studios</h3>
+            <p>Artist features, studio spotlights, and convention coverage. Credibility in an industry where reputation is everything.</p>
+          </div>
+          <div class="niche-card">
+            <div class="niche-badge">Agriculture</div>
+            <h3>Farm-to-Table &amp; CSA</h3>
+            <p>Small farms, CSAs, and direct-sale food producers. Coverage in food media that moves boxes and builds loyal subscriber bases.</p>
+          </div>
+          <div class="niche-card">
+            <div class="niche-badge">Wellness</div>
+            <h3>Functional &amp; Integrative Health</h3>
+            <p>Acupuncture clinics, herbalists, and integrative practices. Media that reaches health-conscious patients actively seeking alternatives.</p>
+          </div>
+          <div class="niche-card">
+            <div class="niche-badge">Events</div>
+            <h3>Haunted Attractions &amp; Experiences</h3>
+            <p>Escape rooms, horror experiences, and seasonal attractions. Industry trade coverage and consumer entertainment press placements.</p>
+          </div>
+          <div class="niche-card">
+            <div class="niche-badge">Trades</div>
+            <h3>Specialty Contractors</h3>
+            <p>Custom home builders, restoration specialists, and niche tradespeople. Local business press and trade publications that signal authority.</p>
+          </div>
+          <div class="niche-card">
+            <div class="niche-badge">Retail</div>
+            <h3>Independent Retail &amp; Gifts</h3>
+            <p>Gift shops, toy stores, and specialty boutiques. Gifting guides, regional roundups, and buyer-facing trade media.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How StandardPR works</span>
+          <h2>A clear process from pitch to publication.</h2>
+          <p>
+            Most PR agencies pitch broadly and hope something lands. We research the right angle for your business, identify the specific editors and outlets, and write pitches designed for the niche — not for a generic press blast.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+            </div>
+            <h3>Niche Media Research</h3>
+            <p>We map every relevant publication, podcast, newsletter, and blog in your industry category — including the ones that don't show up on a generic media list.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+            </div>
+            <h3>Story Development</h3>
+            <p>We build a narrative that editors actually want to cover — founder angle, product innovation, community impact, or industry trend — tailored to each outlet's beat.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h3>Pitch &amp; Follow-Through</h3>
+            <p>We pitch, follow up, and manage the editorial relationship — so you're not waiting on a cold inbox while your story ages out. When it lands, we send you the link.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- PUBLICATIONS -->
+    <section class="section" id="publications">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Where we get you covered</span>
+          <h2>Media that moves customers, not just impressions.</h2>
+          <p>
+            These aren't vanity placements. These publications have real readerships of buyers, enthusiasts, and industry insiders actively looking for businesses like yours.
+          </p>
+        </div>
+
+        <div class="pub-grid">
+          <div class="pub-card">
+            <div class="pub-type">Craft Beverage</div>
+            <div class="pub-name">Brew Your Business</div>
+            <p class="pub-desc">The go-to trade publication for independent craft beverage producers — brewers, distillers, and cidery owners read this cover to cover.</p>
+          </div>
+          <div class="pub-card">
+            <div class="pub-type">Pet Industry</div>
+            <div class="pub-name">Pet Business Magazine</div>
+            <p class="pub-desc">Trusted by independent pet retailers and service providers. A feature here signals credibility to both pet owners and wholesale buyers.</p>
+          </div>
+          <div class="pub-card">
+            <div class="pub-type">Wellness</div>
+            <div class="pub-name">Acupuncture Today</div>
+            <p class="pub-desc">The leading news source for integrative health professionals — read by practitioners and the patients who research their options carefully.</p>
+          </div>
+          <div class="pub-card">
+            <div class="pub-type">Agriculture</div>
+            <div class="pub-name">Modern Farmer</div>
+            <p class="pub-desc">High-quality editorial with a devoted audience of food-forward consumers who actively seek out and support the farms they read about.</p>
+          </div>
+          <div class="pub-card">
+            <div class="pub-type">Body Art</div>
+            <div class="pub-name">Tattoo Artist Magazine</div>
+            <p class="pub-desc">The industry's most respected print and digital publication. A feature here lifts both artist prestige and studio inquiry volume.</p>
+          </div>
+          <div class="pub-card">
+            <div class="pub-type">Events &amp; Attractions</div>
+            <div class="pub-name">Haunted Attraction Network</div>
+            <p class="pub-desc">The hub for haunt owners, scare actors, and the dedicated fanbase that plans their fall season around what they read here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section class="section" id="offer">
+      <div class="container offer-layout">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="eyebrow">What's included</span>
+          <h2>Everything you need to get legitimate press coverage.</h2>
+          <p>
+            No account manager ping-pong. No mystery reporting dashboards. You get a clear deliverable: live editorial placements in publications that matter to your business, and the documentation to prove it.
+          </p>
+        </div>
+
+        <article class="card">
+          <h3 style="font-family:var(--font-display);margin-bottom:0.25rem;">Your StandardPR engagement includes</h3>
+          <p style="font-size:var(--text-sm);margin-bottom:0.5rem;">Every package, every tier.</p>
+          <ul class="offer-list">
+            <li><span class="check">✓</span><div><strong>Niche media audit</strong><br><span>We map the publications, newsletters, and podcasts in your specific industry vertical.</span></div></li>
+            <li><span class="check">✓</span><div><strong>Story angle development</strong><br><span>We identify the hook that editors in your space will actually respond to.</span></div></li>
+            <li><span class="check">✓</span><div><strong>Custom pitch writing</strong><br><span>Personalized pitches written for each outlet — not a blast template.</span></div></li>
+            <li><span class="check">✓</span><div><strong>Editorial follow-up</strong><br><span>We manage the follow-through so placements don't fall through the cracks.</span></div></li>
+            <li><span class="check">✓</span><div><strong>Placement report</strong><br><span>Every live article, link, and circulation number documented and delivered.</span></div></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Pricing</span>
+          <h2>Straightforward retainers, real results.</h2>
+          <p>
+            No long-term contracts to start. Every tier is a 90-day engagement with a guaranteed minimum placement commitment. If we don't hit it, we extend at no charge.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Launch</h3>
+            <div class="price-row">
+              <div class="price">$750</div>
+              <div class="price-note">/ mo</div>
+            </div>
+            <p>For businesses that have never had press coverage and want to get started.</p>
+            <ul class="price-list">
+              <li><span class="check">✓</span><span>Niche media research</span></li>
+              <li><span class="check">✓</span><span>2 custom pitches per month</span></li>
+              <li><span class="check">✓</span><span>1 guaranteed placement / 90 days</span></li>
+              <li><span class="check">✓</span><span>Monthly placement report</span></li>
+            </ul>
+            <a class="btn btn-secondary" href="#cta">Start with Launch</a>
+          </article>
+
+          <article class="price-card featured">
+            <div class="price-label">Most popular</div>
+            <h3>Growth</h3>
+            <div class="price-row">
+              <div class="price">$1,800</div>
+              <div class="price-note">/ mo</div>
+            </div>
+            <p>For businesses ready to build a consistent press presence and expand into new verticals.</p>
+            <ul class="price-list">
+              <li><span class="check">✓</span><span>Everything in Launch</span></li>
+              <li><span class="check">✓</span><span>5 custom pitches per month</span></li>
+              <li><span class="check">✓</span><span>3 guaranteed placements / 90 days</span></li>
+              <li><span class="check">✓</span><span>1 press release per quarter</span></li>
+              <li><span class="check">✓</span><span>Media kit development</span></li>
+            </ul>
+            <a class="btn btn-accent" href="#cta">Start with Growth</a>
+          </article>
+
+          <article class="price-card">
+            <h3>Authority</h3>
+            <div class="price-row">
+              <div class="price">$3,500</div>
+              <div class="price-note">/ mo</div>
+            </div>
+            <p>For established businesses building a category-defining brand presence.</p>
+            <ul class="price-list">
+              <li><span class="check">✓</span><span>Everything in Growth</span></li>
+              <li><span class="check">✓</span><span>Unlimited pitches</span></li>
+              <li><span class="check">✓</span><span>6+ guaranteed placements / 90 days</span></li>
+              <li><span class="check">✓</span><span>Podcast outreach included</span></li>
+              <li><span class="check">✓</span><span>Dedicated PR strategist</span></li>
+            </ul>
+            <a class="btn btn-secondary" href="#cta">Start with Authority</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Client results</span>
+          <h2>What getting press in the right places actually does.</h2>
+          <p>
+            Coverage in a niche outlet with 30,000 engaged readers outperforms a mention in a national blog your customers never read.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial">
+            <span class="quote-mark">"</span>
+            <p>We got a feature in Brew Your Business after three months with StandardPR. Our taproom bookings jumped that month and two regional distributors reached out cold. That never happened before.</p>
+            <div class="testimonial-footer">
+              <div class="avatar">DK</div>
+              <div><strong>Dana K.</strong><br>Founder, Ridgeline Brewing Co.</div>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <span class="quote-mark">"</span>
+            <p>As a tattoo studio, we always felt invisible outside of Instagram. StandardPR got us a full artist profile in Tattoo Artist Magazine. The credibility boost was immediate — and the bookings followed.</p>
+            <div class="testimonial-footer">
+              <div class="avatar">MT</div>
+              <div><strong>Marco T.</strong><br>Owner, Inkwell Studio</div>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <span class="quote-mark">"</span>
+            <p>The niche research alone was worth it. I didn't even know half the publications they pitched us to existed. We ended up covered in three I'd never heard of — and they sent real customers.</p>
+            <div class="testimonial-footer">
+              <div class="avatar">SB</div>
+              <div><strong>Simone B.</strong><br>Owner, Roots &amp; Remedy Wellness</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Common questions</span>
+          <h2>What most businesses ask before they start.</h2>
+        </div>
+
+        <div class="faq">
+          <article class="faq-item open">
+            <button class="faq-question" aria-expanded="true">
+              <span>Do I need to be an established business to work with StandardPR?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              No — but you do need a real story to tell. If you're open, operating, and have at least a basic digital presence (website, social), we can build a pitch. Many of our best placements come from businesses in their first two years.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What counts as a "guaranteed placement"?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              A live editorial article or feature (not sponsored content or a paid listing) in a relevant niche publication with documented circulation. We don't count press release pickups or aggregator mentions — these are real editorial placements.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How long does it take to see results?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Most clients see their first placement within 3 to 6 weeks. Some niche publications have longer editorial lead times — trade magazines, for example, may run 6–8 weeks. We'll set clear expectations after your intake call.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>My industry isn't listed — can you still help?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Possibly. If there's a trade publication or enthusiast media ecosystem around your business category, we can likely work in it. Book a call and we'll be upfront about whether we can actually deliver before you commit to anything.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Is there a long-term contract?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Every engagement starts as a 90-day retainer with no long-term lock-in. If we hit our placement commitment, you have the option to continue month-to-month. If we don't hit it, we extend at no charge until we do.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="cta">
+      <div class="container">
+        <div class="cta-panel">
+          <span class="eyebrow">Ready to get covered?</span>
+          <h2>Your story deserves to be in print — and pixels.</h2>
+          <p>
+            Book a free 20-minute intake call. We'll tell you exactly which publications would be right for your business, what kind of story we'd pitch, and what results you can realistically expect.
+          </p>
+          <div class="hero-actions" style="justify-content:center;margin-top:var(--space-8);">
+            <a class="btn btn-primary" href="#top">Book your intake call</a>
+            <a class="btn btn-secondary" href="#pricing">Review packages</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="7" height="7" rx="1.5" fill="currentColor"/>
+              <rect x="14" y="3" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.5"/>
+              <rect x="3" y="14" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.5"/>
+              <rect x="14" y="14" width="7" height="7" rx="1.5" fill="currentColor"/>
+            </svg>
+          </span>
+          <span>StandardPR</span>
+        </div>
+        <p style="margin-top: 0.875rem; color: var(--color-text-muted); max-width: 40ch; font-size: var(--text-sm);">
+          Niche PR for businesses that know their audience and want press coverage that actually reaches them.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#niches">Who We Serve</a>
+        <a href="#publications">Publications</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Results</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('[data-menu-toggle]');
+    const navLinks = document.querySelector('[data-nav-links]');
+    const faqButtons = document.querySelectorAll('.faq-question');
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    const root = document.documentElement;
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      root.setAttribute('data-theme', 'dark');
+      themeToggle.setAttribute('aria-label', 'Switch to light mode');
+      themeToggle.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+    }
+
+    menuToggle?.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    faqButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        item.classList.toggle('open');
+        button.setAttribute('aria-expanded', String(!isOpen));
+      });
+    });
+
+    themeToggle?.addEventListener('click', () => {
+      const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', nextTheme);
+      const isDark = nextTheme === 'dark';
+      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      themeToggle.innerHTML = isDark
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
+    });
+  </script>
+</body>
+</html>
